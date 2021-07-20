@@ -56,6 +56,44 @@ label a {
 
 
 /*
+ * -- MENU STYLES --
+ * I want to customize how my .pure-menu looks at the top of the page
+ */
+
+.home-menu {
+    padding: 0.5em;
+    text-align: center;
+    background: $fgcol;
+}
+
+.pure-menu.pure-menu-fixed {
+    /* Fixed menus normally have a border at the bottom. */
+    border-bottom: none;
+}
+
+.home-menu .pure-menu-heading {
+    color: white;
+    font-weight: 400;
+    font-size: 120%;
+}
+
+.home-menu .pure-menu-selected a {
+    color: #ffffff;
+}
+
+.home-menu a {
+    color: #030E34;
+}
+
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: none;
+    border: none;
+    color: #9498ca;
+}
+
+
+/*
  * -- CONTENT STYLES --
  * This represents the content area (everything below the blue section)
  */
