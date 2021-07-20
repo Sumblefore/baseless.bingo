@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"> {% include purecss.html %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/default.css">
+    <title>{{ site.title }} - {{ page.title }}</title>
+</head>
+
+<body>
+    {% include navbar.html %}
+
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="pure-g">
+                <div class="pure-u-md-1-6"></div>
+                <div class="l-box pure-u-1 pure-u-md-2-3">
+                    {{ content }}
+                </div>
+                <div class="pure-u-md-1-6"></div>
+            </div>
+        </div>
+    </div>
+
+    {% include footer.html %}
+
+    <script>
+        const squares = [];
+        const shufstr = [];
+        var i = 1;
+		{ % for square in page.squares % }
+        squares.push("{{ square }}");
+        shufstr.push(String.fromCharCode(i));
+        i++;
+		{ % endfor % }
+
+        function shuffle(array) {
+            var currentIndex = array.length,
+                randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                // And swap it with the current element.
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]
+                ];
+            }
+
+            return array;
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const seed = urlParams.get('seed');
+    </script>
+</body>
+
+</html>
