@@ -72,9 +72,9 @@
 
         function fillInSheet() {
             for (i = 0; i < bingosheet.length; i++) {
-                if (i < 13) {
+                if (i < 12) {
                     bingosheet[i].textContent = squares[shufstr[i].charCodeAt(0) - charoff];
-                } else if (i > 13) {
+                } else if (i > 12) {
                     bingosheet[i].textContent = squares[shufstr[i-1].charCodeAt(0) - charoff];
                 } else {
                     bingosheet[i].textContent = freesq;
