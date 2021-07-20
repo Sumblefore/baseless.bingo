@@ -1,16 +1,17 @@
 .square {
-    width: 50%;
-    outline: 2px solid  black;
+    position: relative;
+    width: 90%;
+    outline: 2px solid black;
 }
 
 .square::after {
     content: "";
     display: block;
-    padding-bottom: 100%;
+    padding-bottom: 80%;
 }
 
 .sq-content {
-    position: absolute;
     width: 100%;
     height: 100%;
+    text-align: center;
 }
