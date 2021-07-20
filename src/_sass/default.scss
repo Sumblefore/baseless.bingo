@@ -132,6 +132,21 @@ label a {
     padding: 1em 1em 3em;
 }
 
+.post-h {
+	padding-top: 1em;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	label {
+		display: inline;
+		margin-right: 1em;
+	}
+}
+
 
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --

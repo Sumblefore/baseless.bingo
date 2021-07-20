@@ -1,17 +1,18 @@
 .square {
-    position: relative;
-    width: 90%;
-    outline: 2px solid black;
-}
-
-.square::after {
-    content: "";
-    display: block;
-    padding-bottom: 80%;
-}
-
-.sq-content {
-    width: 100%;
-    height: 100%;
+    outline: 2px solid white;
+    padding: 2em 1em;
     text-align: center;
+    vertical-align: middle;
+    color: $fgcol;
 }
+
+@media print{
+    body{ background-color:#FFFFFF; background-image:none; color:#000000 }
+    .header{display:none;}
+    .pure-button{display:none;}
+    .footer{display: none;}
+    .square{
+        color: black;
+        outline: 2px solid black;
+    }
+  }
