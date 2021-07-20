@@ -35,7 +35,7 @@
         var squares = [];
         var shufstr = [];
         const charoff = 65;
-        const freesq = {{ page.freesq }}
+        const freesq = "{{ page.freesq }}";
         var i = charoff;
         const urlParams = new URLSearchParams(window.location.search);
         const seed = urlParams.get('seed');
