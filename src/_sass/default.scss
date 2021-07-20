@@ -56,6 +56,26 @@ label a {
 
 
 /*
+ * -- CONTENT STYLES --
+ * This represents the content area (everything below the blue section)
+ */
+
+.content-wrapper {
+    padding-top: 2em;
+    min-height: 12%;
+    background: $bgcol;
+    width: 100%;
+}
+
+
+/* We want to give the content area some more padding */
+
+.content {
+    padding: 1em 1em 3em;
+}
+
+
+/*
  * -- TABLET (AND UP) MEDIA QUERIES --
  * On tablets and other medium-sized devices, we want to customize some
  * of the mobile styles.
