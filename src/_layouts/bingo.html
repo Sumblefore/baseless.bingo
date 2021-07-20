@@ -25,10 +25,12 @@
     {% include footer.html %}
 
     <script>
-        const squares = [];
-        const shufstr = [];
-        var i = 1;
-		{% for square in page.squares %}
+        var squares = [];
+        var shufstr = [];
+        const charoff = 65;
+        var i = charoff;
+
+        {% for square in page.squares %}
         squares.push("{{ square }}");
         shufstr.push(String.fromCharCode(i));
         i++;
@@ -56,6 +58,16 @@
 
         const urlParams = new URLSearchParams(window.location.search);
         const seed = urlParams.get('seed');
+
+        if ((seed == null) || (seed.length < squares.length)) {
+            shuffle(shufstr);
+            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?seed=' + shufstr.join('');
+            window.history.pushState({
+                path: newurl
+            }, '', newurl);
+        } else {
+            shufstr = Array.from(seed);
+        }
     </script>
 </body>
 
