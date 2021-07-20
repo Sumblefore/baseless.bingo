@@ -18,6 +18,12 @@
                     {{ content }}
                 </div>
                 <div class="pure-u-md-1-6"></div>
+
+                <div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div>
+                <div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div>
+                <div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div>
+                <div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div>
+                <div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div><div class="square pure-u-1-5"><p class="sq-content"></p></div>
             </div>
         </div>
     </div>
@@ -25,17 +31,17 @@
     {% include footer.html %}
 
     <script>
+        // Declare variables
         var squares = [];
         var shufstr = [];
         const charoff = 65;
+        const freesq = {{ page.freesq }}
         var i = charoff;
+        const urlParams = new URLSearchParams(window.location.search);
+        const seed = urlParams.get('seed');
+        var bingosheet = document.getElementsByClassName("sq-content");
 
-        {% for square in page.squares %}
-        squares.push("{{ square }}");
-        shufstr.push(String.fromCharCode(i));
-        i++;
-		{% endfor %}
-
+        // Declare functions
         function shuffle(array) {
             var currentIndex = array.length,
                 randomIndex;
@@ -56,18 +62,45 @@
             return array;
         }
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const seed = urlParams.get('seed');
-
-        if ((seed == null) || (seed.length < squares.length)) {
-            shuffle(shufstr);
-            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?seed=' + shufstr.join('');
+        function newSeed(array) {
+            shuffle(array);
+            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?seed=' + array.join('');
             window.history.pushState({
                 path: newurl
             }, '', newurl);
+        }
+
+        function fillInSheet() {
+            for (i = 0; i < bingosheet.length; i++) {
+                if (i < 13) {
+                    bingosheet[i].textContent = squares[shufstr[i].charAt(0) - charoff];
+                } else if (i > 13) {
+                    bingosheet[i].textContent = squares[shufstr[i-1].charAt(0) - charoff];
+                } else {
+                    bingosheet[i].textContent = freesq;
+                }
+            }
+        }
+
+        function reroll() {
+            newSeed(shufstr);
+            fillInSheet();
+        }
+
+        // Get YAML variables
+        {% for square in page.squares %}
+        squares.push("{{ square }}");
+        shufstr.push(String.fromCharCode(i));
+        i++;
+		{% endfor %}
+
+        if ((seed == null) || (seed.length < squares.length)) {
+            newSeed(shufstr)
         } else {
             shufstr = Array.from(seed);
         }
+
+        fillInSheet();
     </script>
 </body>
 
