@@ -28,11 +28,11 @@
         const squares = [];
         const shufstr = [];
         var i = 1;
-		{ % for square in page.squares % }
+		{% for square in page.squares %}
         squares.push("{{ square }}");
         shufstr.push(String.fromCharCode(i));
         i++;
-		{ % endfor % }
+		{% endfor %}
 
         function shuffle(array) {
             var currentIndex = array.length,
