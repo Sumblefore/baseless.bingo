@@ -1,0 +1,14 @@
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <ul class="pure-menu-list">
+            {% for item in site.data.navigation %} {% if page.url == item.link %}
+            <li class="pure-menu-item pure-menu-selected">
+                {% endif %} {% if page.url != item.link %}
+                <li class="pure-menu-item">
+                    {% endif %}
+                    <a href="{{ item.link }}" class="pure-menu-link">{{ item.name }}</a>
+                </li>
+                {% endfor %}
+        </ul>
+    </div>
+</div>
