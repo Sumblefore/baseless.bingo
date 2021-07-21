@@ -9,12 +9,17 @@
  * -- BASE STYLES --
  * Most of these are inherited from Base, but I want to change a few.
  */
+html {
+    min-height: 100%;
+}
 
 body {
     line-height: 1.7em;
     color: $txcol;
     background-color: $bgcol;
     font-size: 13px;
+    position: relative;
+    min-height: 100vh;
 }
 
 h1,
@@ -24,7 +29,7 @@ h4,
 h5,
 h6,
 label {
-    color: $fgcol;
+    color: $txcol;
 }
 
 h1 a,
@@ -34,7 +39,7 @@ h4 a,
 h5 a,
 h6 a,
 label a {
-    color: $fgcol;
+    color: $txcol;
 }
 
 .pure-img-responsive {
@@ -67,10 +72,11 @@ label a {
 }
 
 .footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+    position: absolute;
+    color: $footertxt;
 }
 
 
@@ -82,6 +88,7 @@ label a {
 .home-menu {
     padding: 0.5em;
     text-align: center;
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
     background: $fgcol;
 }
 
@@ -163,7 +170,7 @@ label a {
         text-align: left;
     }
     .home-menu ul {
-        float: left;
+        float: right;
     }
 }
 

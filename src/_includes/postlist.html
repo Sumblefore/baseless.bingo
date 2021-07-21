@@ -1,8 +1,6 @@
-<div class="pure-u-md-1-6"></div>
-<div class="l-box is-center pure-u-1 pure-u-md-2-3">
+<div class="l-box is-center pure-u-1">
     {% for post in site.posts %}
     <a class="pure-button" href="{{ post.url }}">
         {{ post.title }} [{{ post.date | date_to_string }}]
     </a> {% endfor %}
 </div>
-<div class="pure-u-md-1-6"></div>
