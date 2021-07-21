@@ -1,18 +1,28 @@
 .square {
-    outline: 2px solid white;
+    outline: 2px solid $bingoline;
     padding: 2em 1em;
     text-align: center;
     vertical-align: middle;
     color: $fgcol;
 }
 
-@media print{
-    body{ background-color:#FFFFFF; background-image:none; color:#000000 }
-    .header{display:none;}
-    .pure-button{display:none;}
-    .footer{display: none;}
-    .square{
+@media print {
+    body {
+        background-color: #FFFFFF;
+        background-image: none;
+        color: #000000
+    }
+    .header {
+        display: none;
+    }
+    .pure-button {
+        display: none;
+    }
+    .footer {
+        display: none;
+    }
+    .square {
         color: black;
         outline: 2px solid black;
     }
-  }
+}

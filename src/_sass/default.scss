@@ -1,6 +1,3 @@
-$fgcol: #f82529;
-$bgcol: #030E34;
-$txcol: #ffffff;
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -50,17 +47,19 @@ label a {
     z-index: 4;
 }
 
+
 /*
  * -- LAYOUT STYLES --
  * These are some useful classes which I will need
  */
- .l-box {
+
+.l-box {
     padding: 1em;
 }
 
 .l-box-lrg {
     padding: 2em;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .is-center {
@@ -92,24 +91,24 @@ label a {
 }
 
 .home-menu .pure-menu-heading {
-    color: white;
+    color: $txcol;
     font-weight: 400;
     font-size: 120%;
 }
 
 .home-menu .pure-menu-selected a {
-    color: #ffffff;
+    color: $linkactive;
 }
 
 .home-menu a {
-    color: #030E34;
+    color: $link;
 }
 
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;
     border: none;
-    color: #9498ca;
+    color: $linkhover;
 }
 
 
@@ -133,18 +132,17 @@ label a {
 }
 
 .post-h {
-	padding-top: 1em;
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	label {
-		display: inline;
-		margin-right: 1em;
-	}
+    padding-top: 1em;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    label {
+        display: inline;
+        margin-right: 1em;
+    }
 }
 
 
