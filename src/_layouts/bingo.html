@@ -23,6 +23,8 @@
 
                 <div class="is-center pure-u-1">
                     <a onclick="reroll()" class="pure-button">Shuffle</a>
+                    <a onclick="shareSheet(false)" class="pure-button">Share sheet randomiser</a>
+                    <a onclick="shareSheet(true)" class="pure-button">Share my sheet</a>
                 </div>
 
                 <div class="pure-u-1"><br></div>
@@ -128,6 +130,21 @@
         function reroll() {
             newSeed(shufstr);
             fillInSheet();
+        }
+
+        function shareSheet(keepSeed){
+            var urlCopy
+            if(keepSeed == false) {
+                urlCopy = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            } else if(keepSeed == true) {
+                urlCopy = window.location.protocol + "//" + window.location.host + window.location.pathname + '?seed=' + shufstr.join('');
+            }
+            var copyDummy = document.createElement("input");
+            document.body.appendChild(copyDummy);
+            copyDummy.value = urlCopy;
+            copyDummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(copyDummy);
         }
 
         // Get YAML variables

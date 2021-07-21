@@ -52,6 +52,10 @@ label a {
     z-index: 4;
 }
 
+a {
+    color: $fgcol;
+}
+
 
 /*
  * -- LAYOUT STYLES --
@@ -129,6 +133,12 @@ label a {
     min-height: 12%;
     background: $bgcol;
     width: 100%;
+}
+
+.pure-button {
+    background-color: $fgcol;
+    columns: $txcol;
+    margin: 0.5em;
 }
 
 
