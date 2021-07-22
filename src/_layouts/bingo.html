@@ -133,11 +133,14 @@
         }
 
         function shareSheet(keepSeed){
-            var urlCopy
+            var urlCopy;
+			var alertTxt;
             if(keepSeed == false) {
                 urlCopy = window.location.protocol + "//" + window.location.host + window.location.pathname;
+				alertTxt = "Copied link to bingo sheet randomiser";
             } else if(keepSeed == true) {
                 urlCopy = window.location.protocol + "//" + window.location.host + window.location.pathname + '?seed=' + shufstr.join('');
+				alertTxt = "Copied link to your bingo sheet";
             }
             var copyDummy = document.createElement("input");
             document.body.appendChild(copyDummy);
@@ -145,6 +148,7 @@
             copyDummy.select();
             document.execCommand("copy");
             document.body.removeChild(copyDummy);
+			alert(alertTxt);
         }
 
         // Get YAML variables
