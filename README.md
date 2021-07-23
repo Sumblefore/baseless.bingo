@@ -11,7 +11,7 @@ The sheet randomisers are formatted as follows:
 ---
 title: "Movie Title"
 layout: bingo
-eplink: Link to BS episode
+eplink: Link to BS episode on acast
 freesq: free center square
 squares:
     - Each
