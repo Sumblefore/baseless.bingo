@@ -4,4 +4,4 @@ layout: home
 ---
 
 # Baseless Bingo
-All of the bingo, none of the research. A bingo sheet randomiser for the Baseless Specultation podcast. Each randomiser is contributed on [GitHub]({{ site.github }})
+All of the bingo, none of the research. A bingo sheet randomiser for the Baseless Speculation podcast. Each randomiser is contributed on [GitHub]({{ site.github }})
