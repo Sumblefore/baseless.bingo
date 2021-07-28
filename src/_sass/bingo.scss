@@ -69,6 +69,18 @@
     }
     .square {
         color: #000000;
-        outline: 2px solid #000000;
+        border: 1px solid #000000;
+    }
+    .sqt {
+        border-top: 2px solid #000000;
+    }
+    .sql {
+        border-left: 2px solid #000000;
+    }
+    .sqb {
+        border-bottom: 2px solid #000000;
+    }
+    .sqr {
+        border-right: 2px solid #000000;
     }
 }
